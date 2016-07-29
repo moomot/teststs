@@ -1,0 +1,24 @@
+From e85595b3063617dbdb88cf5e90c4e87a67119739 Mon Sep 17 00:00:00 2001
+From: Oleksandr Kovalenko <Oleksandr.Kovalenko@portaone.com>
+Date: Tue, 7 Jun 2016 17:15:21 +0300
+Subject: RT#515791 Make 'Fair Usage Policy' fields not editable on Account
+ level
+
+Change-Id: Icdccbebbbd38232e52ff4891f5cfec460223435c
+
+diff --git a/apache/webApplication/app/view/common/serviceFeatures/field/Number.js b/apache/webApplication/app/view/common/serviceFeatures/field/Number.js
+index 73bf918..ff40446 100644
+--- a/apache/webApplication/app/view/common/serviceFeatures/field/Number.js
++++ b/apache/webApplication/app/view/common/serviceFeatures/field/Number.js
+@@ -31,6 +31,8 @@ Ext.define('PBweb.view.common.serviceFeatures.field.Number', {
+                 fieldLabel: _(gui.get('label')),
+                 labelWidth: 230,
+                 hideTrigger: true,
++                readOnly: this.readOnly,
++                readOnlyCls: this.readOnlyCls,
+                 bind: {
+                     disabled: '{disabled}',
+                     value: '{values}'
+-- 
+cgit v0.10.2
+
